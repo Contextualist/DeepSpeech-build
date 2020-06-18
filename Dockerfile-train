@@ -17,7 +17,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python3-venv \
         unzip \
         wget \
-        sox && \
+        sox \
+        libsox-fmt-mp3 && \
     apt-get clean && \
     apt-get autoremove && \
     rm -rf /var/lib/apt/lists/* /tmp/*
