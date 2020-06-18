@@ -16,7 +16,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         locales \
         python3-venv \
         unzip \
-        wget
+        wget \
+        sox && \
+    apt-get clean && \
+    apt-get autoremove && \
+    rm -rf /var/lib/apt/lists/* /tmp/*
 
 WORKDIR /
 RUN git lfs install
