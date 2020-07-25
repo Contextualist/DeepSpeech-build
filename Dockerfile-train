@@ -44,6 +44,9 @@ RUN pip3 install --upgrade pip==20.0.2 wheel==0.34.2 setuptools==46.1.3
 # Disable tensorflow installation as we want the builtin GPU version
 RUN DS_NODECODER=y DS_NOTENSORFLOW=y pip3 install --upgrade -e .
 
+# For loading HDF5 in tensorflow
+RUN pip3 install tensorflow-io
+
 # monkey-patch entrypoint
 COPY DeepSpeech.py /DeepSpeech/
 
